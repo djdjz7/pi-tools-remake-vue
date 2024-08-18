@@ -49,14 +49,4 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
-button {
-  font-family: Inter;
-  @apply p-y-1 p-x-4 border-1 border-solid border-gray/40 rounded-2 text-sm
-  @apply transition-all duration-200
-  @apply focus:ring-2 ring-offset-1 ring-gray/50  
-  @apply text-black
-  @apply hover:filter-brightness-95 focus:filter-brightness-95
-  @apply hover:shadow-md;
-}
 </style>

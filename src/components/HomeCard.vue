@@ -2,7 +2,7 @@
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const props = defineProps<{
+defineProps<{
   title: string;
   image?: string;
   href: string;
@@ -11,6 +11,7 @@ const props = defineProps<{
 
 <template>
   <div
+    cursor-pointer
     p-4
     rounded-xl
     bg-gradient-to-r
@@ -20,6 +21,9 @@ const props = defineProps<{
     border-1
     border-solid
     shadow-lg
+    hover:shadow-xl
+    transition-all
+    duration-150
     @click="router.push(href)"
   >
     <span>{{ title }}</span>

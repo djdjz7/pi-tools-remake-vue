@@ -17,22 +17,24 @@ const scenarioScores = ref<ScenarioScore[]>();
 
 onMounted(async () => {
   if (qqid) {
-    var response = await httpClient.get(`/api/get/playerscore?qq=${qqid}`);
-    var responseData =
-      response.data as CommonResponse<PlayerScoreQueryResponseData>;
+    var response = await httpClient.get<
+      CommonResponse<PlayerScoreQueryResponseData>
+    >(`/api/get/playerscore?qq=${qqid}`);
+    var responseData = response.data;
     if (!responseData.isSuccess) {
       switch (responseData.error) {
         case "PLAYER_NOT_FOUND":
           alert(
             "该用户不存在！\n请在pi加盟群进行注册！\n如果对自己用户状态有疑问，请咨询管理员！"
           );
-          router.push("/query");
           break;
         case "PLAYER_BANNED":
           alert("该用户已被封禁！");
-          router.push("/query");
           break;
+        default:
+          alert(responseData.error);
       }
+      router.back();
       return;
     }
     playerInfo.value = responseData.data?.player;
@@ -69,7 +71,11 @@ onMounted(async () => {
 
     <div m-t-2 flex-grow-1 flex-shrink-1>
       <div v-for="scenarioScore in scenarioScores" flex="~ items-center" gap-2>
-        <img h-12 w-12 :src="`http://47.93.57.125:521/WebAPI/public/icons/${scenarioScore.scenarioID}.png`"/>
+        <img
+          h-12
+          w-12
+          :src="`http://47.93.57.125:521/WebAPI/public/icons/${scenarioScore.scenarioID}.png`"
+        />
         <span font-bold>{{ scenarioScore.scenarioName }}</span>
         <span text-amber>{{ scenarioScore.score }}</span>
         <span>PTT: {{ scenarioScore.rating }}</span>

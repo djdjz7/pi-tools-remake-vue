@@ -20,6 +20,18 @@ const routes = [
   {
     path: "/query/:qqid",
     component: () => import("./views/PlayerScoreView.vue"),
+  },
+  {
+    path: "/scenarios/all",
+    component: () => import("./views/ScenarioListView.vue"),
+  },
+  {
+    path: "/scenarios/id/:id",
+    component: () => import("./views/SingleScenarioView.vue"),
+  },
+  {
+    path: '/scenarios/random',
+    component: () => import('./views/RandomScenarioLoadingView.vue')
   }
 ];
 

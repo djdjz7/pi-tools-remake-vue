@@ -19,3 +19,26 @@ export interface PlayerScoreQueryResponseData {
   player: PlayerCondensed;
   scenarioScores: ScenarioScore[];
 }
+
+export interface Scenario {
+  id: number;
+  name: string;
+  scoreMultiplier: number;
+  constant: number;
+  author: string;
+  feature: number;
+  package: string;
+}
+
+export interface ScenarioPlayerScore {
+  nickname: string;
+  score: number;
+  userId: number;
+  qqId: string;
+  potential: number;
+}
+
+export interface ScenarioScoreListResponseData {
+  scenario: Scenario;
+  players: ScenarioPlayerScore[];
+}
