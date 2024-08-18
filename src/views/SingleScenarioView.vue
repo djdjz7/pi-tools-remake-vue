@@ -35,7 +35,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div flex="~ col items-start">
+  <div flex="~ col items-center">
     <h1>场景库排名</h1>
     <div flex>
       <img

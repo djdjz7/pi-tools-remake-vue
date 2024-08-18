@@ -69,7 +69,7 @@ onMounted(async () => {
       </div>
     </div>
 
-    <div m-t-2 flex-grow-1 flex-shrink-1>
+    <div m-t-4 flex-grow-1 flex-shrink-1>
       <div v-for="scenarioScore in scenarioScores" flex="~ items-center" gap-2>
         <img
           h-12
