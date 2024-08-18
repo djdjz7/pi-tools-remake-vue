@@ -30,18 +30,6 @@ const handleSubmit = () => {
 </template>
 
 <style scoped>
-input {
-  font-family: Inter;
-  @apply p-y-2 p-x-3 border-1 border-solid border-gray/40 rounded-2 dark:bg-dark;
-  @apply transition-all duration-200;
-  @apply focus:ring-2 ring-offset-1 ring-gray/50;
-  @apply text-dark dark:text-light;
-  @apply hover:shadow-md;
-}
-input:focus {
-  outline: none;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

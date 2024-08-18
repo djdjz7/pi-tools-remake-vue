@@ -18,6 +18,9 @@ defineProps<{
     from-white
     to-slate-100
     border-slate
+    dark:from-dark-700
+    dark:to-dark-900
+    dark:border-dark-800
     border-1
     border-solid
     shadow-lg
